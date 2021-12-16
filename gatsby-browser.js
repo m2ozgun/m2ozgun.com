@@ -1,1 +1,1 @@
-require('./src/styles/prism.css')
+require("prismjs/themes/prism-tomorrow.css")
