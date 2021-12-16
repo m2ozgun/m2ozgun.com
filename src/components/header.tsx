@@ -10,7 +10,7 @@ interface HeaderProps {
 const Header = ({ siteTitle = "" }: HeaderProps) => {
   const defaultThemeState =
     (typeof window !== "undefined" && window.localStorage.getItem("theme")) ||
-    null
+    "dark"
   const [userTheme, changeTheme] = useState(defaultThemeState)
 
   const onToggleTheme = () => {
@@ -27,12 +27,12 @@ const Header = ({ siteTitle = "" }: HeaderProps) => {
         <html className={userTheme === "dark" ? "dark" : ""} />
       </Helmet>
 
-      <header className="bg-neutral-100 dark:bg-neutral-900 flex items-center justify-between relative p-3 py-3">
+      <header className="bg-neutral-100 dark:bg-neutral-900 flex items-center justify-between relative p-3 font-semibold">
         <div className="container max-w-screen-md flex items-center justify-between my-0 mx-auto">
           <Link to="/" className="no-underline text-gray-900 dark:text-white">
             <span className="text-xl">{siteTitle}</span>
           </Link>
-          <span className="flex relative text-neutral-800 dark:text-white">
+          <span className="flex relative text-neutral-900 dark:text-white">
             <Menu onToggleTheme={onToggleTheme} />
           </span>
         </div>

@@ -1,3 +1,4 @@
+import { Link } from "gatsby"
 import * as React from "react"
 
 interface MenuProps {
@@ -47,8 +48,22 @@ const Menu = ({ onToggleTheme }: MenuProps) => (
   <>
     <div className="block">
       <ul className="flex grow-0 shrink-0 items-center justify-start max-w-screen-lg my-0 mx-auto list-none">
-        <li className="m-0 mr-2">Projects</li>
-        <li className="m-0 mr-2">Blog</li>
+        <li className="m-0 mr-2">
+          <Link
+            to="/projects"
+            className="no-underline text-gray-900 dark:text-white mr-3"
+          >
+            <span>Projects</span>
+          </Link>
+        </li>
+        <li className="m-0 mr-3">
+          <Link
+            to="/blog"
+            className="no-underline text-gray-900 dark:text-white mr-3"
+          >
+            <span>Blog</span>
+          </Link>
+        </li>
       </ul>
     </div>
     <button onClick={onToggleTheme} type="button">
