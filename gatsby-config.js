@@ -7,12 +7,18 @@ require('ts-node').register({
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
+    title: `m2ozgun`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
   },
   plugins: [
+    {
+      resolve: 'gatsby-plugin-postcss',
+      options: {
+        postCssPlugins: [require('tailwindcss')('./tailwind.config.js')],
+      },
+    },
     {
       resolve: `gatsby-plugin-typescript`,
       options: {

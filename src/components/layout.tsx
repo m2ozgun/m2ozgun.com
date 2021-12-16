@@ -24,23 +24,10 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <>
       <Header siteTitle={siteTitle} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `2rem`,
-          }}
-        >
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
+      <div className="bg-white dark:bg-neutral-800 h-screen">
+        <div className="container max-w-screen-md mx-auto">
+          <main>{children}</main>
+        </div>
       </div>
     </>
   )

@@ -1,37 +1,44 @@
-import * as React from "react"
+import React, { useState } from "react"
 import { Link } from "gatsby"
+import Menu from "./menu"
+import Helmet from "react-helmet"
 
 interface HeaderProps {
   siteTitle: string
 }
 
-const Header = ({ siteTitle = "" }: HeaderProps) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+const Header = ({ siteTitle = "" }: HeaderProps) => {
+  const defaultThemeState =
+    (typeof window !== "undefined" && window.localStorage.getItem("theme")) ||
+    null
+  const [userTheme, changeTheme] = useState(defaultThemeState)
+
+  const onToggleTheme = () => {
+    const oppositeTheme = userTheme === "light" ? "dark" : "light"
+    console.log("oppositeTheme", oppositeTheme)
+    typeof window !== "undefined" &&
+      window.localStorage.setItem("theme", oppositeTheme)
+    changeTheme(oppositeTheme)
+    console.log(window.localStorage.getItem("theme"))
+  }
+  return (
+    <>
+      <Helmet>
+        <html className={userTheme === "dark" ? "dark" : ""} />
+      </Helmet>
+
+      <header className="bg-neutral-100 dark:bg-neutral-900 flex items-center justify-between relative p-3 py-3">
+        <div className="container max-w-screen-md flex items-center justify-between my-0 mx-auto">
+          <Link to="/" className="no-underline text-gray-900 dark:text-white">
+            <span className="text-xl">{siteTitle}</span>
+          </Link>
+          <span className="flex relative text-neutral-800 dark:text-white">
+            <Menu onToggleTheme={onToggleTheme} />
+          </span>
+        </div>
+      </header>
+    </>
+  )
+}
 
 export default Header
