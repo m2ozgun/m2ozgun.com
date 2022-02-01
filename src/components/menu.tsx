@@ -40,7 +40,7 @@ const MoonIcon = () => (
 )
 
 const ToggleIcon = () => {
-  const theme = window.localStorage.getItem("theme") || "dark"
+  const theme = typeof window !== "undefined" && (window.localStorage.getItem("theme") || "dark")
   return theme === "dark" ? <MoonIcon /> : <SunIcon />
 }
 
