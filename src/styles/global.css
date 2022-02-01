@@ -46,6 +46,7 @@
   h1 {
     @apply text-4xl;
     @apply mt-8;
+    @apply tracking-tight;
   }
   h2 {
     @apply text-2xl;
