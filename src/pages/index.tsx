@@ -11,10 +11,19 @@ const projects = [
     githubUrl: "https://github.com/m2ozgun/coin-flip",
   },
   {
+    name: "RarityList",
+    role: "Rarity engine for Solana NFT collections",
+    githubUrl: "https://github.com/m2ozgun/raritylist",
+  },
+  {
     name: "Tweemo",
-    email: "leslie.alexander@example.com",
     role: "Etsy competitor analysis tool (SaaS)",
     githubUrl: "https://github.com/m2ozgun/tweemo",
+  },
+  {
+    name: "metaDAO",
+    role: "Multi-agent autonomous DAO simulation (WIP)",
+    githubUrl: "https://github.com/m2ozgun/metadao",
   },
 ]
 
