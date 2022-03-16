@@ -1,7 +1,7 @@
-require('ts-node').register({
+require("ts-node").register({
   compilerOptions: {
-    module: 'commonjs',
-    target: 'es2017',
+    module: "commonjs",
+    target: "es2017",
   },
 })
 
@@ -14,9 +14,9 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: 'gatsby-plugin-postcss',
+      resolve: "gatsby-plugin-postcss",
       options: {
-        postCssPlugins: [require('tailwindcss')('./tailwind.config.js')],
+        postCssPlugins: [require("tailwindcss")("./tailwind.config.js")],
       },
     },
     {
@@ -42,7 +42,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-prismjs`,
             options: {
-              classPrefix: 'language-',
+              classPrefix: "language-",
               inlineCodeMarker: null,
               aliases: {},
               showLineNumbers: false,
@@ -61,13 +61,6 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `pages`,
-        path: `${__dirname}/src/markdown`,
       },
     },
     {
@@ -92,7 +85,6 @@ module.exports = {
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
-
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

@@ -35,7 +35,7 @@ const Blog = ({ data }: BlogProps) => {
     <>
       <SEO title="Blog" />
       <Layout>
-        <div className="divide-y">
+        <div>
           {posts.map(({ node }) => {
             const {
               id,
@@ -72,7 +72,7 @@ export const postsQuery = graphql`
           excerpt
           frontmatter {
             title
-            date(formatString: "DD MMMM YYYY")
+            date(formatString: "MMMM DD, YYYY")
             slug
             author
           }
