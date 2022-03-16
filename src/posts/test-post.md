@@ -5,4 +5,4 @@ author: "m2ozgun"
 slug: "/test-post"
 ---
 
-Hey! This is my first post. Hey! This is my first post. Hey! This is my first post. Hey! This is my first post. Hey! This is my first post.
+Hey! This is my first post.

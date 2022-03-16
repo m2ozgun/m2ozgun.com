@@ -8,15 +8,13 @@ const projects = [
   {
     name: "SolCoinFlip",
     role: "Provable coin flip Solana program using Anchor",
-    githubUrl:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+    githubUrl: "https://github.com/m2ozgun/coin-flip",
   },
   {
     name: "Tweemo",
     email: "leslie.alexander@example.com",
     role: "Etsy competitor analysis tool (SaaS)",
-    githubUrl:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+    githubUrl: "https://github.com/m2ozgun/tweemo",
   },
 ]
 
@@ -36,7 +34,7 @@ const IndexPage = () => {
         </h2>
       </div>
 
-      <h3 className="text-gray-900 dark:text-white font-bold">Who dis?</h3>
+      <h3 className="text-gray-900 dark:text-white font-bold">Who am I?</h3>
       <p className="text-gray-900 dark:text-white">
         I'm Mert, a full-stack developer with experience in building SaaS
         software and web3 experiences.
@@ -62,15 +60,17 @@ const IndexPage = () => {
 
       <h3 className="text-gray-900 dark:text-white font-bold mt-8">Projects</h3>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 mt-4">
-        {projects.map(person => (
+        {projects.map(project => (
           <div
-            key={person.email}
+            key={project.name}
             className="relative rounded-lg border border-gray-300 bg-white dark:bg-neutral-200 px-6 py-4 shadow-sm flex items-center space-x-3 hover:border-gray-400 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500"
           >
             <div className="flex-1 min-w-0">
-              <a href="#" className="focus:outline-none">
-                <p className="text-md font-bold text-gray-900">{person.name}</p>
-                <p className="text-sm text-gray-500">{person.role}</p>
+              <a href={project.githubUrl} className="focus:outline-none">
+                <p className="text-md font-bold text-gray-900">
+                  {project.name}
+                </p>
+                <p className="text-sm text-gray-500">{project.role}</p>
                 <p className="text-sm text-gray-500">Github -{">"}</p>
               </a>
             </div>
@@ -80,8 +80,12 @@ const IndexPage = () => {
       <h3 className="text-gray-900 dark:text-white font-bold mt-8">Contact</h3>
       <div className="text-gray-900 dark:text-white  text-sm leading-4">
         <p>me[at]m2ozgun.com</p>
-        <p>Github -{">"}</p>
-        <p>Twitter -{">"}</p>
+        <a href="https://github.com/m2ozgun" className="hover:underline">
+          <p>Github -{">"}</p>
+        </a>
+        <a href="https://twitter.com/m2ozgun" className="hover:underline">
+          <p>Twitter -{">"}</p>
+        </a>
       </div>
     </Layout>
   )
